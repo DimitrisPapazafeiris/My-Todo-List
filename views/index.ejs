@@ -1,0 +1,55 @@
+<%- include("partials/header.ejs") %>
+
+<% 
+const currentDate = new Date();
+const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const month = currentDate.getMonth();
+const dayOfMonth = currentDate.getDate();
+const dayOfWeek =  currentDate.getDay();
+const fullDate = `${weekdays[dayOfWeek]}, ${months[month]} ${dayOfMonth}`;
+%>
+
+<div class="box" id="heading">
+    <% if ( currentUrl === "/") { %>
+        <h1><%= fullDate  %></h1>
+    <% } else { %>
+        <h1>Work List</h1>
+    <% } %>
+</div>
+
+
+<% if ( currentUrl === "/") { %>
+    <form action="/" method="post">
+            <input type="text" placeholder="New Item" name="newItem">
+            <input type="submit" name="list" value="+">
+    </form>
+<% } else { %>
+    <form action="/work" method="post">
+        <input type="text" placeholder="New Item" name="newItem">
+        <input type="submit" name="list" value="+">
+    </form>
+<% } %>
+
+<div class="box">
+    <% if ( currentUrl === "/") { %>  
+        <% for (let i = 0; i < itemList.length; i++) { %>
+            <div class="item">
+                <input type="checkbox">
+                <p><%= itemList[i] %></p>
+            </div>
+        <% } %>
+
+    <% } else { %> 
+        <% for (let i = 0; i < workItemList.length; i++) { %>
+            <div class="item">
+                <input type="checkbox">
+                <p><%= workItemList[i] %></p>
+            </div>
+        <% } %> 
+    <% } %>
+
+    
+</div>
+
+<%- include("partials/footer.ejs") %>
