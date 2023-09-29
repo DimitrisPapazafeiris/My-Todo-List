@@ -111,11 +111,11 @@ input[type=submit]{
 
 @media screen and (min-width: 320px) and (max-width:374px) {
     main{
-        width: 300px;
+        width: 95%;
     }
 
     .nav{
-        width: 300px;
+        width: 100%;
     }
 
     .nav-item{
@@ -154,16 +154,21 @@ input[type=submit]{
         margin-left: 4px;
     }
 
+    footer{
+        margin:0;
+    }
+
 }
 
 
 @media screen and (min-width: 375px) and (max-width: 424px) {
     main{
-        width: 350px;
+        width: 95%;
+        margin:0;
     }
 
     .nav{
-        width: 350px;
+        width: 100%;
     }
 
     .nav-item{
@@ -201,15 +206,19 @@ input[type=submit]{
         width: 35px;
         margin-left: 4px;
     }
+
+    footer{
+        margin:0;
+    }
 }
 
 @media screen and (min-width: 424px) and (max-width: 767px){
     main{
-        width: 400px;
+        width: 95%;
     }
 
     .nav{
-        width: 400px;
+        width: 100%;
     }
 
     .nav-item{
@@ -246,5 +255,9 @@ input[type=submit]{
         height: 35px;
         width: 35px;
         margin-left: 4px;
+    }
+
+    footer{
+        margin:0;
     }
 }
