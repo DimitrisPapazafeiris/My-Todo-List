@@ -19,18 +19,6 @@ const fullDate = `${weekdays[dayOfWeek]}, ${months[month]} ${dayOfMonth}`;
 </div>
 
 
-<% if ( currentUrl === "/") { %>
-    <form action="/" method="post">
-            <input type="text" placeholder="New Item" name="newItem">
-            <input type="submit" name="list" value="+">
-    </form>
-<% } else { %>
-    <form action="/work" method="post">
-        <input type="text" placeholder="New Item" name="newItem">
-        <input type="submit" name="list" value="+">
-    </form>
-<% } %>
-
 <div class="box">
     <% if ( currentUrl === "/") { %>  
         <% for (let i = 0; i < itemList.length; i++) { %>
@@ -48,8 +36,19 @@ const fullDate = `${weekdays[dayOfWeek]}, ${months[month]} ${dayOfMonth}`;
             </div>
         <% } %> 
     <% } %>
-
-    
 </div>
+
+
+<% if ( currentUrl === "/") { %>
+    <form action="/" method="post">
+            <input type="text" placeholder="New Item" name="newItem">
+            <input type="submit" name="list" value="+">
+    </form>
+<% } else { %>
+    <form action="/work" method="post">
+        <input type="text" placeholder="New Item" name="newItem">
+        <input type="submit" name="list" value="+">
+    </form>
+<% } %>
 
 <%- include("partials/footer.ejs") %>
