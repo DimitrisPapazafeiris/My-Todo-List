@@ -207,9 +207,7 @@ input[type=submit]{
         margin-left: 4px;
     }
 
-    footer{
-        margin:0;
-    }
+    
 }
 
 @media screen and (min-width: 424px) and (max-width: 767px){
